@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>{{ data.title }}</h2>
+<form [formGroup]="form">
+
+    <div class="d-flex flex-wrap justify-content-center">
+
+        <mat-form-field appearance="outline" class="m-2">
+            <input matInput placeholder="First Name" formControlName="firstName" required>
+            <mat-error *ngIf="form.get('firstName')?.hasError('required')">First name required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-2">
+            <input matInput placeholder="Last Name" formControlName="lastName" required>
+            <mat-error *ngIf="form.get('lastName')?.hasError('required')">Last name required</mat-error>
+        </mat-form-field>
+
+        <div class="w-100"></div>
+
+        <mat-form-field appearance="outline" class="m-2">
+            <input matInput placeholder="Email" formControlName="email" required>
+            <mat-error *ngIf="form.get('email')?.hasError('required')">Email is required</mat-error>
+            <mat-error *ngIf="form.get('email')?.hasError('email')">Invalid email format</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-2" style="width: 212px;">
+            <input matInput [matDatepicker]="datePicker" placeholder="Date of Birth" formControlName="dateOfBirth"
+                required>
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+            <mat-error *ngIf="form.get('dateOfBirth')?.hasError('required')">Invalid date</mat-error>
+        </mat-form-field>
+
+        <div class="w-100"></div>
+
+        <mat-form-field appearance="outline" class="m-2">
+            <mat-select formControlName="education" placeholder="Education">
+                <mat-option *ngFor="let option of ['Bachelor', 'Master']" [value]="option">
+                    {{ option }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.get('education')?.hasError('required')">Education required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="m-2">
+            <input matInput placeholder="Department" formControlName="department" required>
+            <mat-error *ngIf="form.get('department')?.hasError('required')">Department required</mat-error>
+        </mat-form-field>
+
+        <div class="w-100"></div>
+
+        <mat-radio-group formControlName="gender" required>
+            <span style="font-weight:500; color:gray">Gender</span>
+            <mat-radio-button color="primary" value="true" [checked]="data.worker.gender">Male</mat-radio-button>
+            <mat-radio-button color="primary" value="false" [checked]="!data.worker.gender">Female</mat-radio-button>
+        </mat-radio-group>
+        <!-- <mat-error *ngIf="form.get('gender').invalid">Gender selection is required</mat-error> -->
+
+        <mat-form-field appearance="outline" class="m-2">
+            <input matInput placeholder="Salary" formControlName="salary" required>
+            <mat-error *ngIf="form.get('salary')?.hasError('required')">Salary required</mat-error>
+            <mat-error *ngIf="form.get('salary')?.hasError('notANumber')">Must be a number</mat-error>
+        </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Cancel</button>
+        <button mat-button type="submit" [disabled]="form.invalid" (click)="onSubmit()">Save</button>
+    </div>
+</form>

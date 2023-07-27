@@ -1,0 +1,52 @@
+.user-image {
+    width: 30px;
+    height: 30px;
+}
+.menu-image {
+    width: 5em;
+    height: 5em;
+}
+.welcome {
+    font-size: 14px;
+    font-weight: lighter;
+}
+.name {
+    margin-left: 7em;
+    margin-top: -45px;
+    font-size: 15px;
+}
+#collapseContent {
+    position: fixed;
+    top: 0;
+    left: -220px; /* Initial position, off-screen */
+    width: 220px;
+    height: 100vh;
+    color: #d3d9e0;
+    background-color: #23374c;
+    transition: left 0.3s ease;
+}
+
+#collapseContent.show {
+    left: 0; /* Move navbar to visible position */
+}
+
+.page-content {
+    margin-left: 20px; /* Same width as navbar */
+    transition: margin-left 0.3s ease;
+}
+
+.page-content.shrink {
+    margin-left: 240px; /* Shrink page content when navbar expands */
+}
+
+.navbar-toggler {
+    border: hidden;
+}
+.navbar-toggler:active, .navbar-toggler:focus, .navbar-toggler:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+.hid {
+    padding-top: 13.6px;
+    padding-bottom: 13.6px;
+}

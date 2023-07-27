@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "murad@mail.com",
+      "password": "Minecraft2009",
+      "name": "Murad Ismayilov",
+      "isActive": true,
+      "isAdmin": true
+    },
+    {
+      "id": "example@gmail.com",
+      "password": "example12345678",
+      "name": "example name",
+      "isActive": true,
+      "isAdmin": false
+    },
+    {
+      "id": "murad@gmail.com",
+      "password": "murad123",
+      "name": "Murad 2",
+      "isActive": true,
+      "isAdmin": false
+    },
+    {
+      "id": "myradism@gmail.com",
+      "password": "myrad123",
+      "name": "Murad",
+      "isActive": true,
+      "isAdmin": false
+    },
+    {
+      "id": "johndoe@gmail.com",
+      "name": "John Doe",
+      "password": "john1234",
+      "isActive": true,
+      "isAdmin": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+.edit-button {
+  color:#535ab4;
+}
+.delete-button {
+  color:red;
+}
+table {
+  width: 101.6%;
+  margin-left: -20px;
+}
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+.mat-mdc-row.highlighted:hover .mat-mdc-cell {
+  background-color: #3579f6;
+  color: white;
+}
+.mat-mdc-row.highlighted .mat-mdc-cell {
+  background-color: #3579f6;
+  color: white;
+}

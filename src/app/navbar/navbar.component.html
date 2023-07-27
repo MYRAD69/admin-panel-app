@@ -1,0 +1,44 @@
+<nav class="navbar bg-body-tertiary fixed-top" [ngClass]="{'hid': isHidden}">
+    <div class="container-fluid">
+        <div class="navigation" #navigation>
+            <div class="page-content" [ngClass]="{ 'shrink': !isNavbarVisible }"
+                [ngStyle]="{'margin-left.px': !isNavbarVisible ? 220: 0}">
+                <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <nav id="collapseContent" [ngClass]="{ 'show': !isNavbarVisible }">
+                <div class="profile-info d-flex flex-wrap">
+                    <img src="https://yt3.ggpht.com/os7Yw6RimtysXXpc8NrXraci87TjXgZSUQyAezi0D3RrNL3YP5riIwi1-0al4Wz0XwzH6oBu6g=s88-c-k-c0x00ffffff-no-rj"
+                        class="menu-image rounded-circle m-2" alt="Profile Picture">
+                    <p class="welcome mt-4 ms-2">Welcome,</p>
+                    <h5 class="name text-body-primary">{{ userName }}</h5>
+                </div>
+                <div class="collapse-header ms-2">
+                    <h5 class="collapse-title">General</h5>
+                </div>
+                <div class="ms-2">
+                    <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <div *ngFor="let item of navItems" class="mt-4">
+                            <app-navbar-item [item]="item"></app-navbar-item>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="user-dropdown border rounded-pill border-2 p-2" #dropdownMenu>
+            <div class="user-profile" (click)="toggleDropdown()">
+                <img src="https://yt3.ggpht.com/os7Yw6RimtysXXpc8NrXraci87TjXgZSUQyAezi0D3RrNL3YP5riIwi1-0al4Wz0XwzH6oBu6g=s88-c-k-c0x00ffffff-no-rj"
+                    class="user-image rounded-circle" alt="Profile Picture">
+                <span class="ms-2 me-2">{{ userName }}</span>
+                <span class="dropdown-toggle"></span>
+            </div>
+            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" routerLink="/login" (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>

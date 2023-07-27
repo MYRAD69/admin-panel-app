@@ -1,0 +1,8 @@
+<div class="app">
+    <div>
+        <app-navbar (navbarEvent)="handleNavbarEvent($event)"></app-navbar>
+    </div>
+    <div id="pageContent" [ngClass]="{ 'shrink': isNavbarVisible }">
+        <router-outlet></router-outlet>
+    </div>
+</div>

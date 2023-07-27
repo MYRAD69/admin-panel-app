@@ -1,0 +1,31 @@
+<div *ngIf="item.isDropdown; else notDropdown">
+    <li class="nav-item dropdown">
+        <div class="d-flex flex-wrap">
+            <div class="d-flex flex-wrap nav-drop" [ngClass]="{'shown': shown}">
+                <img class="item-image" [src]="item.img" alt="bruh">
+                <button class="nav-link dropdown-toggle" role="button" (click)="toggleDropdown()"
+                    [style.color]="'#d3d9e0'">
+                    {{item.title}}
+                </button>
+            </div>
+            <div class="w-100"></div>
+            <ul class="dropdown-menu" #dropdownMenu>
+                <div *ngFor="let dropItem of item.dropItems">
+                    <li class="nav-drop-item" [routerLinkActive]="'chosen'">
+                        <mat-icon>fiber_manual_record</mat-icon>
+                        <a class="nav-drop-link" mat-button [routerLink]="dropItem.link"
+                            [style.color]="'#d3d9e0'">{{dropItem.title}}</a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </li>
+</div>
+<ng-template #notDropdown>
+    <li class="nav-item">
+        <div class="d-flex">
+            <img class="item-image" [src]="item.img" alt="bruh">
+            <a class="nav-link" [routerLink]="item.link" [style.color]="'#d3d9e0'">{{item.title}}</a>
+        </div>
+    </li>
+</ng-template>

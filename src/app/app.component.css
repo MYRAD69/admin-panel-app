@@ -1,0 +1,10 @@
+#pageContent {
+    margin-left: 240px; /* Same width as navbar */
+    transition: margin-left 0.3s ease;
+    margin-top: 5em;
+    height: 80%;
+}
+
+#pageContent.shrink {
+    margin-left: 20px; /* Shrink page content when navbar expands */
+}

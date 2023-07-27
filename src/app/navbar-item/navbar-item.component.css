@@ -1,0 +1,47 @@
+.item-image {
+    width: 25px;
+    height: 25px;
+    margin-right: 1em;
+}
+.nav-link {
+    margin-top: -7px;
+}
+.dropdown-menu {
+    margin-left: 20px;
+    border: none;
+    background-color: transparent;
+    flex-grow: 1;
+}
+.nav-drop {
+    flex-grow: 1;
+}
+.nav-drop.shown {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-right: 15px;
+    margin-right: -15px;
+    padding-left: 0.5em;
+    margin-left: -0.5em;
+    padding-top: 0.5em;
+    margin-top: -0.5em;
+}
+.nav-drop-link {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.nav-drop-item {    
+    padding: 0.2em;
+    margin: -0.2em;
+    border-radius: 0.25em;
+}
+.nav-drop-item.chosen {
+    background-color: #435669;
+}
+[mat-button] {
+    justify-content: flex-start;
+}
+mat-icon {
+    padding-top: 3px;
+    font-size: 15px;
+    height: 15px;
+    width: 15px;
+    color: #9dbfe7;
+}
